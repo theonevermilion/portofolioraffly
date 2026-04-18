@@ -292,6 +292,84 @@
     });
   </script>
   <!-- end owl carousel script -->
+      <script>
+function toggleSearch() {
+  const box = document.getElementById("searchBox");
+  const input = document.getElementById("searchInput");
+
+  box.classList.toggle("active");
+
+  // Fokus otomatis saat muncul
+  if (box.classList.contains("active")) {
+    setTimeout(() => input.focus(), 200);
+  }
+}
+</script>
+<script>
+document.addEventListener("click", function(e) {
+  const box = document.getElementById("searchBox");
+
+  if (!box.contains(e.target)) {
+    box.classList.remove("active");
+  }
+});
+</script>
+<script>
+// DATA HALAMAN
+const pages = [
+  { title: "Home", url: "index.html" },
+  { title: "Profile", url: "profile.html" },
+  { title: "Portfolio", url: "portfolio.html" },
+  { title: "Playlist", url: "playlist.html" },
+  { title: "Certificate", url: "contact.html" }
+];
+
+const input = document.getElementById("searchInput");
+const resultBox = document.getElementById("searchResult");
+
+// SEARCH REALTIME
+input.addEventListener("input", function() {
+  const keyword = this.value.toLowerCase();
+  resultBox.innerHTML = "";
+
+  if (!keyword) {
+    resultBox.style.display = "none";
+    return;
+  }
+
+  const filtered = pages.filter(p =>
+    p.title.toLowerCase().includes(keyword)
+  );
+
+  filtered.forEach(p => {
+    const div = document.createElement("div");
+    div.innerText = p.title;
+
+    div.onclick = () => {
+      window.location.href = p.url;
+    };
+
+    resultBox.appendChild(div);
+  });
+
+  resultBox.style.display = "block";
+});
+
+// ENTER SEARCH
+input.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    const keyword = input.value.toLowerCase();
+
+    const found = pages.find(p =>
+      p.title.toLowerCase().includes(keyword)
+    );
+
+    if (found) {
+      window.location.href = found.url;
+    }
+  }
+});
+</script>
     </div>
 </body>
 
