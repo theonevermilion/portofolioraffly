@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>VerPage</title>
+  <title>Playlist</title>
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
@@ -40,6 +40,18 @@
               Vermilion
             </span>
           </a>
+          <!-- Search Bar -->
+          <div class="input-container" id="searchBox">
+              <input id="searchInput"
+                class="input searchInput"
+                name="text"
+                type="text"
+                placeholder="Search the page..."
+              />
+            <div class="search-icon" onclick="toggleSearch()"></div>
+            <div id="searchResult" class="input-container"></div>
+          </div>
+          <!-- End Search BAR -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -61,12 +73,9 @@
                 </li>
               </ul>
               <div class="user_option">
-                <a href="">
+                <a href="/profile.html">
                   <img src="images/user.png" alt="">
                 </a>
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form>
               </div>
             </div>
           </div>
@@ -86,33 +95,33 @@
             <!-- CARD 1 -->
             <div class="song-card">
                 <div class="img-wrapper">
-                    <img src="https://i1.sndcdn.com/artworks-000323264260-6s69m5-t500x500.jpg">
-                    <a href="https://open.spotify.com/track/4W37fDymJzsqaarlKKEvcM?si=b12c2725a5c84b25"><div class="play-btn">▶</div></a>             
-                    <div class="song-title">Once Upon a December</div>
-                    <div class="song-artist">Christy Altomare</div>
-                    <div class="song-playlist">From: December Song</div>
+                    <img src="https://i.scdn.co/image/ab67616d0000b2738649220140846c7edf7f1978">
+                    <a href="https://open.spotify.com/track/7fEoXCZTZFosUFvFQg1BmW?si=7fb534bf1f7b4041"><div class="play-btn">▶</div></a>             
+                    <div class="song-title">Took Her To The O</div>
+                    <div class="song-artist">King Von</div>
+                    <div class="song-playlist">POWERED SONG</div>
                 </div>
             </div>
 
             <!-- CARD 2 -->
             <div class="song-card">
                 <div class="img-wrapper">
-                    <img src="https://i.scdn.co/image/ab67616d0000b27332d2b6de4582ece392ee6bdc">
-                    <a href="https://open.spotify.com/track/6xAIVrhyFQaHwPVWfUvWvE?si=65477f5da5c649dc"><div class="play-btn">▶</div></a>
-                    <div class="song-title">Spiral</div>
-                    <div class="song-artist">Longman</div>
-                    <div class="song-playlist">From: JapanSong</div>
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.34VisPz-AnhAKGvfnqxVygHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+                    <a href="https://open.spotify.com/track/09OKEiKltU6AvvrEtE92OY?si=c3db5a235b4a4899"><div class="play-btn">▶</div></a>
+                    <div class="song-title">Crucufied</div>
+                    <div class="song-artist">Army Of Lovers</div>
+                    <div class="song-playlist">POWERED SONG</div>
                 </div>
             </div>
 
             <!-- CARD 3 -->
             <div class="song-card">
                 <div class="img-wrapper">
-                    <img src="https://i.scdn.co/image/ab67616d0000b2731a72818330a056c9d3556a68">
-                    <a href="https://open.spotify.com/track/2vWBUC9djv6BtiGlmKiQaH?si=3bce3bb23a2b4b22"><div class="play-btn">▶</div></a>
-                    <div class="song-title">YKWIM?</div>
-                    <div class="song-artist">Yot Club</div>
-                    <div class="song-playlist">From: Dreamcore</div>
+                    <img src="https://images.genius.com/485e1ffdcb096f861df00591e918a8d0.1000x1000x1.png">
+                    <a href="https://open.spotify.com/track/2Tf3o75XkU0IS06tYgEuvn?si=d72e18020ece493c"><div class="play-btn">▶</div></a>
+                    <div class="song-title">Lust</div>
+                    <div class="song-artist">Marino, Alexandria</div>
+                    <div class="song-playlist">POWERED SONG</div>
                 </div>
             </div>
 
@@ -123,7 +132,7 @@
                     <a href="https://open.spotify.com/track/3sHH7lklbfpcraDDvYnjo7?si=02073807f57449e9"><div class="play-btn">▶</div></a>
                     <div class="song-title">Bat Country</div>
                     <div class="song-artist">Avenged Sevenfold</div>
-                    <div class="song-playlist">From: Heavy Metal in Here!!</div>
+                    <div class="song-playlist">POWERED SONG</div>
                </div>
             </div>
             <!-- CARD 5 -->
@@ -333,6 +342,11 @@
                     <img src="images/Credit_ 𝐀zα࣪z𝗲̫̄l (2).jpeg" style="height: 60px;" alt="">
                   </div>
                 </a>
+                <!-- <a href="">
+                  <div class="">
+                    <img src="images/Psyger-100 (サイガ-100).jpeg" style="height: 60px;" alt="">
+                  </div>
+                </a> -->
               </div>
             </div>
           </div>
