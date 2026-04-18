@@ -4,6 +4,285 @@ body {
   background-color: #ffffff;
 }
 
+.search-box {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+
+/* Input awal hidden */
+.search-box input {
+  width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 0 15px;
+  background: #1f1f1f;
+  color: white;
+  transition: 0.4s;
+  opacity: 0;
+}
+
+/* From Uiverse.io by 0xnihilism */ 
+.input {
+  width: 100%;
+  max-width: 270px;
+  height: 60px;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.input:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.input:focus {
+  background-color: #000;
+  color: #fff;
+  border-color: #ffffff;
+}
+
+.input:focus::placeholder {
+  color: #fff;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.input:focus::after {
+  content: "|";
+  position: absolute;
+  right: 10px;
+  animation: blink 0.7s step-end infinite;
+}
+
+.input:valid {
+  animation: typing 2s steps(30, end);
+}
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+}
+
+.input {
+  width: 100%;
+  height: 60px;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.input:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #000;
+}
+
+.input:focus {
+  background-color: #010101;
+  color: #fff;
+  border-color: #d6d9dd;
+}
+
+.input:focus::placeholder {
+  color: #fff;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.input:focus {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes glitch {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.input:not(:placeholder-shown) {
+  animation: glitch 1s linear infinite;
+}
+
+.input-container::after {
+  content: "|";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.input:focus + .input-container::after {
+  color: #fff;
+}
+
+.input:not(:placeholder-shown) {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 0 #000;
+}
+
+
+/* Icon */
+.search-icon {
+  position: absolute;
+  padding-left: 40px;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Result box */
+#searchResult {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  z-index: 999;
+}
+
+#searchResult div {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+#searchResult div:hover {
+  background: #333;
+}
+
+/* Saat aktif */
+.search-box.active {
+  width: 250px;
+}
+
+.search-box.active input {
+  width: 100%;
+  opacity: 1;
+  padding-right: 45px;
+}
+
 .spotify-section {
   background: #121212;
   font-family: Arial, sans-serif;
@@ -59,6 +338,139 @@ body {
 
 .song-card .img-wrapper {
   position: relative;
+}
+
+body.profile-page {
+  background: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Container */
+.profile-container {
+  padding: 30px;
+}
+
+/* Top layout */
+.top-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.profile-img {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 15px;
+}
+
+.profile-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* bulat */
+  object-fit: cover;
+
+  border: 3px solid #e50914; /* warna Netflix */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* BIODATA */
+.bio {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.bio h2 {
+  margin-bottom: 15px;
+}
+
+.bio p {
+  margin: 5px 0;
+  color: #000000;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skills img {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skills img:hover {
+  transform: scale(1.1);
+}
+
+/* CV */
+.cv {
+  flex: 2;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.cv iframe {
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Portfolio */
+.portfolio {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Header */
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Portfolio iframe (16:9) */
+.portfolio iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Button */
+.btn-download {
+  background: #e50914;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  background: #ff1f2f;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .top-section {
+    flex-direction: column;
+  }
 }
 
 /* PLAY BUTTON */
